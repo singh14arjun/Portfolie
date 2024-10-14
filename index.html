@@ -232,7 +232,8 @@
 
         .services-list {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* Set a fixed number of columns */
+            grid-template-columns: repeat(4, 1fr);
+            /* Set a fixed number of columns */
             grid-gap: 40px;
             margin-top: 50px;
         }
@@ -259,10 +260,11 @@
             font-weight: 500;
             margin-bottom: 15px;
         }
+
         .services-list div h3 {
             font-weight: 500;
             color: #dcc5c5;
-           
+
         }
 
         .services-list div:hover {
@@ -558,40 +560,42 @@
         }
 
         .layer {
-    width: 100%;
-    height: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), #0ef);
-    position: absolute;
-    border-radius: 8px;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 40px;
-    transition: height 0.5s ease-in-out; /* Ensure smooth transition */
-}
+            width: 100%;
+            height: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), #0ef);
+            position: absolute;
+            border-radius: 8px;
+            left: 0;
+            bottom: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 40px;
+            transition: height 0.5s ease-in-out;
+            /* Ensure smooth transition */
+        }
 
-.layer h5 {
-    color: #000;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
+        .layer h5 {
+            color: #000;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
 
-.layer p {
-    color: #000;
-    font-size: 1rem;
-    line-height: 1.8;
-}
+        .layer p {
+            color: #000;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
 
-/* Ensure the layer expands on hover */
-.row:hover .layer {
-    height: 100%; /* Expand the height to make text visible */
-}
+        /* Ensure the layer expands on hover */
+        .row:hover .layer {
+            height: 100%;
+            /* Expand the height to make text visible */
+        }
 
 
 
@@ -795,12 +799,500 @@
                 opacity: 1;
             }
         }
+
+
+        /*  */
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #ededed;
+    background: #081b29;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    background: #051129;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover {
+    color: #0ef;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(./images/Home.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3:nth-last-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-scl a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    margin: 30px 15px 30px 0;
+}
+
+.home-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,
+                0 0 25px #0ef;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan,
+                0 0 25px cyan,
+                0 0 50px cyan,
+                0 0 100px cyan,
+                0 0 200px cyan;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.about-img img {
+    padding-bottom: 20%;
+    max-width: 630px;
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.about-text h2 {
+    font-size: 60px;
+}
+
+.about-text h2 span {
+    color: #0ef;
+}
+
+.about-text h4 {
+    font-size: 29px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+    margin: 15px 0 30px;
+}
+
+.about-text p {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+#services {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+}
+
+.sub-title span {
+    color: #0ef;
+}
+
+.container {
+    padding: 90px;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div {
+    background-color: transparent;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 13px;
+    border-radius: 20px;
+    transition: background 0.5s, transform 0.5s;
+    box-shadow: 1px 1px 20px #012290f7,
+                1px 1px 20px #b80099f7;
+}
+
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.services-list div h3 {
+    font-weight: 500;
+    color: #dcc5c5;
+}
+
+.services-list div:hover {
+    transform: translateY(-10px);
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container1 {
+    width: 600px;
+    height: 500px;
+    padding: 75px 90px;
+    margin-left: 120px;
+}
+
+.heading1 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 50px;
+}
+
+.bar {
+    font-size: 23px;
+}
+
+.Technical-bars .bar {
+    margin-top: 40px 0;
+}
+
+.Technical-bars .bar:first-child {
+    margin-top: 0;
+}
+
+.Technical-bars .bar:last-child {
+    margin-bottom: 0;
+}
+
+.Technical-bars .bar .info {
+    margin-bottom: 5px;
+}
+
+.Technical-bars .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.Technical-bars .bar .progress-line {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: #000000;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.Technical-bars .bar .progress-line span {
+    height: 100%;
+    background-color: #0ef;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.progress-line.html span {
+    width: 90%;
+}
+
+.progress-line.css span {
+    width: 90%;
+}
+
+.progress-line.javaScript span {
+    width: 80%;
+}
+
+.progress-line.java span {
+    width: 70%;
+}
+
+.progress-line.react span {
+    width: 80%;
+}
+
+.progress-line span::after {
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #dc12c4;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 3px;
+    top: -28px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+.progress-line span::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-top-color: #dc12c4;
+    top: -5px;
+    right: 10px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+.portfolio {
+    padding: 50px 0;
+}
+
+.portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+
+.portfolio-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #051129;
+}
+
+footer p {
+    color: #ddd;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .navbar a {
+        font-size: 20px;
+        margin-left: 20px;
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+    }
+
+    .home-content h3 {
+        font-size: 28px;
+    }
+
+    .about {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+
+    .services-list {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+
+    .portfolio-content {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2-3 columns */
+    }
+
+    .container {
+        padding: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+        margin-left: 15px;
+    }
+
+    .home {
+        padding: 50px 5%;
+    }
+
+    .home-content h1 {
+        font-size: 32px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .about {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+
+    .services-list {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+
+    .portfolio-content {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+
+    .container1 {
+        width: 100%;
+        padding: 20px; /* Adjust padding for mobile */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .heading1 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
     </style>
 </head>
 
 <body>
     <header class="header">
-        <a href="#" class="logo">Portfolio</a>
+        <a href="#" class="logo">Arjun Singh</a>
 
         <nav class="navbar">
             <a href="#home" style="--i:1" class="active">Home</a>
@@ -822,10 +1314,10 @@
                 innovative and demanding work in the field of Java/J2EE.
             </p>
             <div class="home-scl">
-                <a href="#" style="--i:7"><i class='bx bxl-facebook'></i></a>
-                <a href="#" style="--i:8"><i class='bx bxl-instagram'></i></a>
-                <a href="#" style="--i:9"><i class='bx bxl-whatsapp'></i></a>
-                <a href="#" style="--i:10"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/singh14arjun"> <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/arjun_1402_s/"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/in/arjun-singh14/"><i class='bx bxl-linkedin'></i></a>
             </div>
             <a href="#" class="btn-box">More About Me</a>
         </div>
@@ -839,15 +1331,19 @@
         <div class="about-text">
             <h2>About <span>Me</span></h2>
             <h4>Full Stack Developer!</h4>
-            <p>
-                I'm Arjun Singh & I'm from Bihar. I'm an engineering graduate from JIT College specialized in Computer
-                Science. I've worked hard in my education & maintained a CGPA of 8.
-                Along with my degree I've completed Java, SQL and Full Stack Courses online.Now I'm ready to apply my
-                knowledge into practice.Though I do not have any real life working experience, I've had a lot of
-                exposure to the software field.
-                My Goal is to build a successfull career as a Full Stack Developer.Moving forward in my career I hope to
-                expand my experience across different industries.
-                I'm a good learner and team player
+            
+                    <p>
+                        Hello, I'm <strong>Arjun Singh</strong> from Bihar. I hold a Bachelor's degree, completed in 2023, and a Java Certification from Hyderabad. 
+                        Currently, I am pursuing an MCA, further enhancing my skills in software development.<br>
+                    
+                        I have a strong hands-on experience with technologies such as Java-8, JSP, Servlets, JDBC, and Spring Boot. 
+                        As a result-oriented, self-driven, and highly motivated individual, I am always eager to learn new technologies and stay updated with industry trends.
+                  <br>
+                        My technical knowledge includes Java2EE, JSPs, Spring Framework, Spring MVC, along with a solid foundation in JavaScript, jQuery, and Ajax. 
+                        Additionally, I am well-versed with Java-8 features, such as lambda expressions, Stream API, Functional Interfaces, Optional class, 
+                        Date and Time API, and the forEach() method. These skills enable me to write cleaner, more efficient code and build robust applications.
+                  <br>
+
                 That's all about my self.
             </p>
             <a href="#" class="btn-box">More About Me</a>
@@ -857,7 +1353,7 @@
     <section>
         <div class="education" id="education">
             <div class="container">
-                <h1 class="sub-title">Education &  <span>Certifications</span></h1>
+                <h1 class="sub-title">Education & <span>Certifications</span></h1>
                 <div class="services-list">
                     <div>
                         <i class="fa-solid fa-graduation-cap"></i>
@@ -894,7 +1390,7 @@
 
             <h1 class="heading1">Technical Skills</h1>
             <div class="Technical-bars">
-                
+
                 <div class="bar"><i style="color: #c95d2e" class="fa-brands fa-java"></i>
                     <div class="info">
                         <span>Java-8 | Java2EE</span>
@@ -959,7 +1455,7 @@
         </div>
 
 
-        
+
         <div class="container1">
             <h1 class="heading1">Professional Skills</h1>
             <div class="radial-bars">
@@ -1003,11 +1499,11 @@
         </div>
     </section>
 
-     <section>
+    <section>
         <div class="portfolio" id="project">
             <div class="main-text" id="project">
                 <h2> <span>Projects will be added soon</span></h2>
-<!--
+                <!--
                 <div>Full Stack Projects </div>
                 <div class="portfolio-content">
                     <div class="row">
@@ -1063,59 +1559,60 @@
         </div>
     </section> -->
 
-    <section class="contact" id="contact">
-        <div class="contact-text">
-            <h2>Contact <span>Me</span></h2>
-            <h4>Let's Work Together</h4>
+                <section class="contact" id="contact">
+                    <div class="contact-text">
+                        <h2>Contact <span>Me</span></h2>
+                        <h4>Let's Work Together</h4>
 
-            <div class="contact-list">
-                <li><i class="fa-regular fa-envelope"></i> arjun2314singh@gmail.com</li>
-                <li><i class='bx bx-phone'></i> 8174811963</li>
-            </div>
-            <div class="contact-icons">
-                <a href=""><i class='bx bxl-facebook-circle'></i></a>
-                <i class="fa-brands fa-github"></i>
-                <a href=""><i class='bx bxl-instagram'></i></a>
-                <a href=""><i class='bx bxl-linkedin'></i></a>
-            </div>
-        </div>
+                        <div class="contact-list">
+                            <li><i class="fa-regular fa-envelope"></i> arjun2314singh@gmail.com</li>
+                            <li><i class='bx bx-phone'></i> 8174811963</li>
+                        </div>
+                        <div class="contact-icons">
+                            <a href="https://github.com/singh14arjun"> <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.instagram.com/arjun_1402_s/"><i class='bx bxl-instagram'></i></a>
+                            <a href="https://www.linkedin.com/in/arjun-singh14/"><i class='bx bxl-linkedin'></i></a>
+                        </div>
+                    </div>
 
-        <div class="contact-form">
-            <form action="">
-                <input type="text" placeholder="Enter Your Name" required>
-                <input type="email" placeholder="Enter Your Email" required>
+                    <div class="contact-form">
+                        <form action="">
+                            <input type="text" placeholder="Enter Your Name" required>
+                            <input type="email" placeholder="Enter Your Email" required>
 
-                <input type="" placeholder="Enter Your Subject">
+                            <input type="" placeholder="Enter Your Subject">
 
-                <textarea name="" id="" cols="40" rows="10" placeholder="Enter Your Message" required></textarea>
+                            <textarea name="" id="" cols="40" rows="10" placeholder="Enter Your Message"
+                                required></textarea>
 
-                <input type="submit" value="submit" class="send">
-            </form>
-        </div>
+                            <input type="submit" value="submit" class="send">
+                        </form>
+                    </div>
 
-    </section>
-    <div class="last-text">
-        <p>Developed By Arjun....</p>
-    </div>
-    <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
-
-
-
+                </section>
+                <div class="last-text">
+                    <p>2024 | @copyright Developed By Arjun Singh</p>
+                </div>
+                <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
 
 
 
 
-    <script>
-        var typed = new Typed(".text", {
-            strings: ["Frontend Developer", "Java Developer", "Web Developer"],
-            typeSpeed: 10,
-            backSpeed: 100,
-            backDelay: 1000,
-            loop: true
-        });
 
 
-    </script>
+
+                <script>
+                    var typed = new Typed(".text", {
+                        strings: ["Java Developer", "Full Stack Java  Developer", "Web Developer"],
+                        typeSpeed: 10,
+                        backSpeed: 100,
+                        backDelay: 1000,
+                        loop: true
+                    });
+
+
+                </script>
 </body>
 
 </html>
